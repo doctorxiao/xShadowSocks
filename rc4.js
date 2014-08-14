@@ -1,5 +1,5 @@
 
-console.log(getKSA("QWERTYUIOP",new Buffer("123456789")))
+console.log(getRC4("QWERTYUIOP",new Buffer("123456789")))
 
 function getRC4(strkey,data)
 {
@@ -17,7 +17,6 @@ function getRC4(strkey,data)
 	{
 	    key[i]=bufkey.readUInt8(i);
 	}
-	console.log("key:"+key);
 	for(var i=0;i<256;i++)
 	{
 	    s[i]=i;
@@ -29,7 +28,6 @@ function getRC4(strkey,data)
 		s[i]=s[j];
 		s[j]=tmp;
 	}
-	console.log("s:"+s.length);
 	var i=0;
 	var k=0;
 	j=0;
